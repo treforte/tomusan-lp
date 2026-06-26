@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tomu san | Modern Japanese · DC Ranch Scottsdale – Reserve Your Table</title>
+<meta name="description" content="Chef Christopher George's modern Japanese restaurant in DC Ranch, Scottsdale. Pristine nigiri, binchotan fire, rare Japanese whiskies. 4.4 stars · 127 reviews. Reserve now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand: #e8e0d5;
+  --sand-dk: #d4c9b8;
+  --sand-lt: #f2ede6;
+  --ash: #b8a898;
+  --stone: #8c7b6b;
+  --charcoal: #2a2420;
+  --ink: #181410;
+  --smoke: #f7f4f0;
+  --panel: #f0ebe3;
+  --panel2: #ebe4da;
+  --blue-slate: #4a6278; /* brand blue from logo */
+  --blue-lt: #6b87a0;
+  --border: rgba(140,123,107,.22);
+  --border-dk: rgba(140,123,107,.4);
+  --text: #2a2420;
+  --muted: #7a6e65;
+  --muted-lt: #a89e94;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Lato',sans-serif;background:var(--smoke);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── GRAIN OVERLAY ── */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5;mix-blend-mode:multiply}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;transition:all .4s ease;mix-blend-mode:normal}
+.nav.scrolled{background:rgba(247,244,240,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);padding:16px 48px}
+.nav-logo{font-family:'EB Garamond',serif;font-size:20px;font-weight:400;color:var(--charcoal);letter-spacing:.12em;text-transform:lowercase}
+.nav-logo-sub{font-family:'Lato',sans-serif;font-size:9px;font-weight:300;letter-spacing:.4em;text-transform:uppercase;color:var(--stone);display:block;margin-top:1px}
+.nav-center{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.nav-phone{font-family:'Lato',sans-serif;font-size:12px;font-weight:400;color:var(--stone);letter-spacing:.06em;text-decoration:none;transition:color .2s}
+.nav-phone:hover{color:var(--charcoal)}
+.nav-reserve{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--smoke);background:var(--charcoal);padding:12px 22px;text-decoration:none;transition:all .2s}
+.nav-reserve:hover{background:var(--blue-slate)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:72px;overflow:hidden;background:var(--ink)}
+/* Full-bleed food photo simulation via gradient layers */
+.hero-img{position:absolute;inset:0;background:
+  linear-gradient(to bottom, rgba(24,20,16,.15) 0%, rgba(24,20,16,.0) 30%, rgba(24,20,16,.0) 55%, rgba(24,20,16,.72) 100%),
+  linear-gradient(135deg, #2a1f18 0%, #1a1208 40%, #221810 70%, #2d2018 100%);
+  z-index:0}
+/* Warm food texture dots */
+.hero-texture{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle at 20% 40%,#c8a06a 0%,transparent 35%),radial-gradient(circle at 75% 25%,#d4905a 0%,transparent 30%),radial-gradient(circle at 55% 65%,#b87840 0%,transparent 40%),radial-gradient(circle at 85% 75%,#e0b07a 0%,transparent 25%);z-index:0}
+.hero-img-real{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-img-real img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55;filter:saturate(.9) brightness(.85)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(24,20,16,.3) 0%,rgba(24,20,16,.05) 40%,rgba(24,20,16,.7) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:820px;padding:0 24px}
+.hero-eyebrow{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.5em;text-transform:uppercase;color:var(--sand-dk);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:14px;opacity:.85}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';flex:1;max-width:40px;height:1px;background:rgba(212,201,184,.4)}
+.hero-title{font-family:'EB Garamond',serif;font-size:clamp(64px,10vw,130px);font-weight:300;color:#fff;line-height:.9;letter-spacing:-.02em;margin-bottom:16px}
+.hero-title em{font-style:italic;color:var(--sand)}
+.hero-subtitle{font-family:'Lato',sans-serif;font-size:11px;font-weight:300;letter-spacing:.45em;text-transform:uppercase;color:rgba(232,224,213,.7);margin-bottom:32px}
+.hero-desc{font-family:'EB Garamond',serif;font-size:clamp(17px,2.2vw,21px);font-weight:300;font-style:italic;color:rgba(232,224,213,.8);line-height:1.7;max-width:520px;margin:0 auto 36px}
+.hero-cta-group{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn-primary{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);background:var(--sand);padding:18px 40px;border:none;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:#fff;transform:translateY(-2px)}
+.btn-outline{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);background:transparent;padding:17px 36px;border:1px solid rgba(232,224,213,.45);cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--sand);background:rgba(232,224,213,.08)}
+.hero-proof{position:absolute;bottom:0;left:0;right:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:0;background:rgba(24,20,16,.55);backdrop-filter:blur(8px);border-top:1px solid rgba(232,224,213,.12)}
+.hero-proof-item{flex:1;max-width:200px;padding:18px 20px;text-align:center;border-right:1px solid rgba(232,224,213,.12)}
+.hero-proof-item:last-child{border-right:none}
+.hero-proof-num{font-family:'EB Garamond',serif;font-size:28px;font-weight:300;color:var(--sand);line-height:1;display:block}
+.hero-proof-label{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,168,152,.7);margin-top:3px;display:block}
+
+/* Scroll line */
+.scroll-hint{position:absolute;right:40px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint span{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:rgba(232,224,213,.45);writing-mode:vertical-rl}
+.scroll-hint-line{width:1px;height:60px;background:linear-gradient(to bottom,rgba(232,224,213,.4),transparent);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;opacity:0}50%{opacity:1}100%{transform:scaleY(1);transform-origin:top;opacity:0}}
+
+/* ── BOOKING SECTION ── */
+.booking-section{background:var(--smoke);padding:88px 48px;position:relative}
+.booking-section::before{content:'';position:absolute;top:0;left:48px;right:48px;height:1px;background:var(--border)}
+.section-eyebrow{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--stone);margin-bottom:14px;text-align:center}
+.section-title{font-family:'EB Garamond',serif;font-size:clamp(34px,5vw,56px);font-weight:300;color:var(--charcoal);line-height:1.05;text-align:center;margin-bottom:6px}
+.section-title em{font-style:italic;color:var(--blue-slate)}
+.section-sub{font-family:'EB Garamond',serif;font-size:18px;font-weight:300;font-style:italic;color:var(--muted);text-align:center;margin-bottom:56px}
+.booking-layout{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.booking-left{background:var(--smoke);padding:48px 44px}
+.booking-right{background:var(--panel);padding:48px 44px}
+
+/* Form */
+.form-label-group{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;display:block}
+.form-g{margin-bottom:18px}
+.form-row{display:flex;gap:14px}
+.form-row .form-g{flex:1}
+.form-input{width:100%;padding:14px 16px;background:#fff;border:1px solid var(--border-dk);color:var(--charcoal);font-family:'Lato',sans-serif;font-size:14px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;border-radius:0}
+.form-input:focus{border-color:var(--blue-slate);box-shadow:0 0 0 3px rgba(74,98,120,.08)}
+.form-input::placeholder{color:var(--muted-lt);font-style:italic}
+.form-select{width:100%;padding:14px 36px 14px 16px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%238c7b6b' d='M5 6L0 0h10z'/%3E%3C/svg%3E") no-repeat right 14px center;border:1px solid var(--border-dk);color:var(--charcoal);font-family:'Lato',sans-serif;font-size:14px;outline:none;-webkit-appearance:none;appearance:none;cursor:pointer;transition:border-color .2s;border-radius:0}
+.form-select:focus{border-color:var(--blue-slate)}
+.form-select option{background:#fff;color:var(--charcoal)}
+.btn-form{width:100%;font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#fff;background:var(--charcoal);padding:17px;border:none;cursor:pointer;transition:all .25s;margin-top:6px}
+.btn-form:hover{background:var(--blue-slate);transform:translateY(-1px)}
+.form-lock{font-size:11px;color:var(--muted-lt);text-align:center;margin-top:12px;letter-spacing:.04em;font-style:italic}
+.or-divider{display:flex;align-items:center;gap:14px;margin:22px 0}
+.or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.or-divider span{font-family:'Lato',sans-serif;font-size:10px;letter-spacing:.2em;color:var(--muted-lt);text-transform:uppercase}
+.btn-ot{width:100%;font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--charcoal);background:transparent;padding:16px;border:1px solid var(--border-dk);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-ot:hover{background:var(--panel2);border-color:var(--stone)}
+.call-strip{margin-top:18px;padding:16px;background:var(--panel);text-align:center;border:1px solid var(--border)}
+.call-strip p{font-family:'Lato',sans-serif;font-size:11px;color:var(--muted);margin-bottom:5px;letter-spacing:.06em}
+.call-strip a{font-family:'EB Garamond',serif;font-size:20px;font-weight:400;color:var(--charcoal);text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.call-strip a:hover{color:var(--blue-slate)}
+
+/* Right info panel */
+.info-title{font-family:'EB Garamond',serif;font-size:28px;font-weight:300;color:var(--charcoal);margin-bottom:6px;line-height:1.2}
+.info-title em{font-style:italic;color:var(--blue-slate)}
+.info-sub{font-family:'Lato',sans-serif;font-size:13px;color:var(--muted);margin-bottom:32px;line-height:1.7}
+.info-block{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.info-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.info-block-label{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+.info-block-text{font-family:'EB Garamond',serif;font-size:16px;font-weight:300;color:var(--charcoal);line-height:1.9}
+.stars{color:var(--blue-slate);font-size:14px;letter-spacing:2px;margin-bottom:4px}
+.review-count{font-family:'Lato',sans-serif;font-size:11px;color:var(--muted);margin-bottom:12px;letter-spacing:.04em}
+.review-quote{font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--charcoal);line-height:1.7;border-left:2px solid var(--sand-dk);padding-left:16px}
+.review-attr{font-family:'Lato',sans-serif;font-size:11px;color:var(--muted-lt);margin-top:8px;letter-spacing:.06em}
+.uvp-list{display:flex;flex-direction:column;gap:10px}
+.uvp-item{display:flex;align-items:flex-start;gap:10px;font-family:'Lato',sans-serif;font-size:13px;color:var(--muted);line-height:1.5}
+.uvp-mark{width:18px;height:1px;background:var(--stone);flex-shrink:0;margin-top:10px}
+
+/* ── PULL QUOTE ── */
+.pull-section{background:var(--panel2);padding:72px 48px;position:relative;overflow:hidden}
+.pull-section::before{content:'\201C';font-family:'EB Garamond',serif;font-size:280px;line-height:1;color:var(--sand-dk);opacity:.25;position:absolute;top:-40px;left:32px;pointer-events:none}
+.pull-inner{max-width:800px;margin:0 auto;text-align:center;position:relative}
+.pull-quote{font-family:'EB Garamond',serif;font-size:clamp(22px,4vw,36px);font-weight:300;font-style:italic;color:var(--charcoal);line-height:1.55;margin-bottom:20px}
+.pull-quote em{color:var(--blue-slate);font-style:italic}
+.pull-attrs{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.pull-attr{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:8px}
+.pull-attr::before{content:'';width:16px;height:1px;background:var(--ash)}
+
+/* ── EXPERIENCE GRID ── */
+.experience-section{background:var(--smoke);padding:88px 48px}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;border:1px solid var(--border)}
+.exp-card{background:var(--smoke);padding:36px 30px;transition:background .3s}
+.exp-card:hover{background:var(--panel)}
+.exp-num{font-family:'EB Garamond',serif;font-size:48px;font-weight:300;color:var(--sand-dk);line-height:1;display:block;margin-bottom:14px;opacity:.6}
+.exp-name{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--charcoal);margin-bottom:12px}
+.exp-desc{font-family:'EB Garamond',serif;font-size:16px;font-weight:300;color:var(--muted);line-height:1.75}
+
+/* ── REVIEWS ── */
+.reviews-section{background:var(--panel);padding:88px 48px;border-top:1px solid var(--border)}
+.reviews-inner{max-width:1080px;margin:0 auto}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.rev-card{background:var(--smoke);padding:32px;border:1px solid var(--border);transition:border-color .2s}
+.rev-card:hover{border-color:var(--ash)}
+.rev-stars{color:var(--blue-slate);font-size:13px;letter-spacing:2px;margin-bottom:14px}
+.rev-text{font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--charcoal);line-height:1.72;margin-bottom:18px}
+.rev-meta{font-family:'Lato',sans-serif;font-size:11px;color:var(--muted-lt);letter-spacing:.06em}
+.rev-meta strong{color:var(--muted)}
+
+/* ── BADGES STRIP ── */
+.badges-strip{background:var(--charcoal);padding:20px 48px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.badge-item{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,224,213,.55);display:flex;align-items:center;gap:10px}
+.badge-item::before{content:'';width:4px;height:4px;background:var(--sand-dk);display:block;transform:rotate(45deg);opacity:.6}
+
+/* ── FINAL CTA ── */
+.final-cta{background:var(--smoke);padding:100px 48px;text-align:center;position:relative}
+.final-cta::before{content:'';position:absolute;top:0;left:48px;right:48px;height:1px;background:var(--border)}
+.final-title{font-family:'EB Garamond',serif;font-size:clamp(42px,7vw,80px);font-weight:300;color:var(--charcoal);line-height:1;margin-bottom:16px}
+.final-title em{font-style:italic;color:var(--blue-slate)}
+.final-sub{font-family:'EB Garamond',serif;font-size:19px;font-style:italic;color:var(--muted);margin-bottom:40px;line-height:1.6}
+.final-note{font-family:'Lato',sans-serif;font-size:11px;color:var(--muted-lt);margin-top:20px;letter-spacing:.08em}
+
+/* ── FOOTER ── */
+footer{background:var(--charcoal);padding:40px 48px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.footer-logo{font-family:'EB Garamond',serif;font-size:18px;font-weight:300;color:var(--sand);letter-spacing:.1em;text-transform:lowercase}
+.footer-logo small{display:block;font-family:'Lato',sans-serif;font-size:9px;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:var(--stone);margin-top:3px}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-label{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+.footer-col a,.footer-col p{font-family:'Lato',sans-serif;font-size:12px;color:rgba(232,224,213,.5);letter-spacing:.04em;text-decoration:none;transition:color .2s;line-height:1.8}
+.footer-col a:hover{color:var(--sand)}
+.footer-copy{width:100%;border-top:1px solid rgba(232,224,213,.08);padding-top:20px;font-family:'Lato',sans-serif;font-size:11px;color:rgba(232,224,213,.25);letter-spacing:.06em;text-align:center;margin-top:8px}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .9s ease both}
+.hero-eyebrow{animation-delay:.1s}
+.hero-title{animation-delay:.2s}
+.hero-subtitle{animation-delay:.32s}
+.hero-desc{animation-delay:.44s}
+.hero-cta-group{animation-delay:.56s}
+
+/* ── MOBILE ── */
+@media(max-width:767px){
+  .nav{padding:16px 20px}
+  .nav-center,.nav-phone{display:none}
+  .nav-reserve{font-size:9px;padding:10px 16px;letter-spacing:.18em}
+  .hero{padding-bottom:96px}
+  .hero-proof{flex-wrap:wrap}
+  .hero-proof-item{max-width:50%;border-bottom:1px solid rgba(232,224,213,.12)}
+  .scroll-hint{display:none}
+  .booking-section,.experience-section,.reviews-section,.final-cta{padding:56px 20px}
+  .pull-section{padding:56px 20px}
+  .badges-strip{padding:16px 20px;gap:20px}
+  footer{padding:32px 20px}
+  .booking-layout{grid-template-columns:1fr}
+  .booking-left,.booking-right{padding:32px 24px}
+  .booking-left{border-bottom:1px solid var(--border)}
+  .form-row{flex-direction:column;gap:0}
+  .exp-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .footer-col{min-width:140px}
+}
+@media(min-width:768px) and (max-width:1023px){
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── HERO OPTIMIZED ── */
+.btn-hero-reserve{font-size:12px !important;padding:20px 52px !important;letter-spacing:.28em !important;box-shadow:0 4px 28px rgba(0,0,0,.35)}
+.btn-hero-reserve:hover{box-shadow:0 6px 36px rgba(0,0,0,.45)}
+.hero-call-alt{margin-top:14px;text-align:center}
+.hero-call-alt a{font-family:'Lato',sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;color:rgba(232,224,213,.6);text-decoration:none;transition:color .2s;border-bottom:1px solid rgba(232,224,213,.2);padding-bottom:1px}
+.hero-call-alt a:hover{color:rgba(232,224,213,.9);border-color:rgba(232,224,213,.5)}
+
+/* ── INSTANT BLOCK ── */
+.instant-block{background:var(--charcoal);padding:28px;margin-bottom:0;position:relative;overflow:hidden}
+.instant-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue-slate),var(--blue-lt))}
+.instant-label{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(232,224,213,.55);display:block;margin-bottom:14px}
+.btn-instant{display:block;width:100%;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);background:var(--sand);padding:18px;text-decoration:none;text-align:center;transition:all .2s;border:none;cursor:pointer}
+.btn-instant:hover{background:#fff;transform:translateY(-1px)}
+.instant-note{font-family:'Lato',sans-serif;font-size:10px;color:rgba(232,224,213,.38);margin-top:11px;letter-spacing:.05em;line-height:1.6;text-align:center}
+
+/* ── CALL BLOCK ── */
+.call-block{border:1px solid var(--border-dk);padding:0;margin-top:1px}
+.call-block-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px}
+.call-block-label{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+.call-block-num{font-family:'EB Garamond',serif;font-size:22px;font-weight:300;color:var(--charcoal);text-decoration:none;letter-spacing:.04em;display:block;transition:color .2s}
+.call-block-num:hover{color:var(--blue-slate)}
+.btn-call-block{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);background:transparent;padding:13px 20px;border:1px solid var(--border-dk);text-decoration:none;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.btn-call-block:hover{background:var(--panel2);border-color:var(--stone)}
+
+/* ── INQUIRY DETAILS (collapsible) ── */
+.inquiry-details{border:1px solid var(--border)}
+.inquiry-summary{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:14px 18px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;transition:background .2s;user-select:none}
+.inquiry-summary::-webkit-details-marker{display:none}
+.inquiry-summary::after{content:'+';font-size:16px;font-weight:300;color:var(--ash);transition:transform .2s}
+details[open] .inquiry-summary::after{transform:rotate(45deg)}
+.inquiry-summary:hover{background:var(--panel)}
+.inquiry-form-body{padding:20px 18px 18px;border-top:1px solid var(--border)}
+
+/* ── FINAL CTA OPTIMIZED ── */
+.btn-final-reserve{font-size:12px !important;padding:22px 52px !important;letter-spacing:.25em !important;display:inline-block !important}
+.final-call-link{font-family:'Lato',sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;color:var(--muted);text-decoration:none;transition:color .2s;border-bottom:1px solid var(--border-dk);padding-bottom:2px}
+.final-call-link:hover{color:var(--charcoal);border-color:var(--stone)}
+
+/* ── MOBILE STICKY BAR ── */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:600;flex-direction:row;box-shadow:0 -2px 20px rgba(42,36,32,.18);border-top:1px solid var(--border)}
+.sticky-bar-call{flex:1;background:var(--smoke);color:var(--charcoal);font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 8px;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;border-right:1px solid var(--border);transition:background .2s}
+.sticky-bar-call:hover{background:var(--panel)}
+.sticky-bar-reserve{flex:2;background:var(--charcoal);color:var(--sand);font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:16px 8px;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .2s}
+.sticky-bar-reserve:hover{background:var(--blue-slate)}
+@media(max-width:767px){
+  .sticky-bar{display:flex}
+  body{padding-bottom:56px}
+  .call-block-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .btn-call-block{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div>
+    <div class="nav-logo">tomu san</div>
+    <small class="nav-logo-sub">DC Ranch · Scottsdale</small>
+  </div>
+  <div class="nav-center">Modern Japanese · Scottsdale</div>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="tel:4804047030" class="nav-phone">(480) 404-7030</a>
+    <a href="https://www.opentable.com/r/tomu-san-sushi-scottsdale" target="_blank" rel="noopener" class="nav-reserve" onclick="fireOTClick()">Reserve</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img-real">
+    <img src="https://images.squarespace-cdn.com/content/v1/68238cd242a3ec55538c6072/1766095075798-U5LE7595J8AY0FVWGXCU/DSCF4921.jpg" alt="Tomu-san food" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="scroll-hint">
+    <div class="scroll-hint-line"></div>
+    <span>scroll</span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">DC Ranch · Scottsdale, Arizona</div>
+    <h1 class="hero-title">tomu <em>san</em></h1>
+    <p class="hero-subtitle">Modern Japanese · Shared Dining · Binchotan Fire</p>
+    <p class="hero-desc">Chef Christopher George's intimate Japanese kitchen — where pristine nigiri meets contemporary craft, and every table is an invitation to share.</p>
+    <div class="hero-cta-group">
+      <a href="https://www.opentable.com/r/tomu-san-sushi-scottsdale" target="_blank" rel="noopener" class="btn-primary btn-hero-reserve" onclick="fireOTClick()">Reserve Instantly →</a>
+    </div>
+    <div class="hero-call-alt">
+      <a href="tel:4804047030" onclick="fireCallClick()">or call to book &nbsp;(480) 404-7030</a>
+    </div>
+  </div>
+
+  <div class="hero-proof">
+    <div class="hero-proof-item">
+      <span class="hero-proof-num">4.4</span>
+      <span class="hero-proof-label">OpenTable Stars</span>
+    </div>
+    <div class="hero-proof-item">
+      <span class="hero-proof-num">127</span>
+      <span class="hero-proof-label">Verified Reviews</span>
+    </div>
+    <div class="hero-proof-item">
+      <span class="hero-proof-num">11×</span>
+      <span class="hero-proof-label">Booked Today</span>
+    </div>
+    <div class="hero-proof-item">
+      <span class="hero-proof-num">Daily</span>
+      <span class="hero-proof-label">Fresh Menu</span>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section" id="reserve">
+  <div class="section-eyebrow">Reservations</div>
+  <h2 class="section-title">Plan Your <em>Visit</em></h2>
+  <p class="section-sub">Tables are limited — especially on weekends</p>
+
+  <div class="booking-layout">
+    <div class="booking-left">
+      <!-- PRIMARY: Instant booking -->
+      <div class="instant-block">
+        <span class="instant-label">Fastest way to book</span>
+        <a href="https://www.opentable.com/r/tomu-san-sushi-scottsdale" target="_blank" rel="noopener" class="btn-instant" onclick="fireOTClick()">
+          Reserve Instantly on OpenTable →
+        </a>
+        <p class="instant-note">Confirmation is immediate · No account required · Available times shown in real time</p>
+      </div>
+
+      <!-- SECONDARY: Call -->
+      <div class="call-block">
+        <div class="call-block-inner">
+          <div>
+            <p class="call-block-label">Prefer to talk to someone?</p>
+            <a href="tel:4804047030" class="call-block-num" onclick="fireCallClick()">(480) 404-7030</a>
+          </div>
+          <a href="tel:4804047030" class="btn-call-block" onclick="fireCallClick()">Call Now</a>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="or-divider" style="margin:28px 0 22px"><span>can't book right now?</span></div>
+
+      <!-- TERTIARY: Inquiry form — deprioritized -->
+      <details class="inquiry-details">
+        <summary class="inquiry-summary">Leave us your details and we'll follow up</summary>
+        <div class="inquiry-form-body">
+          <div class="form-row">
+            <div class="form-g">
+              <label class="form-label-group">First Name</label>
+              <input class="form-input" type="text" placeholder="First" id="fname">
+            </div>
+            <div class="form-g">
+              <label class="form-label-group">Last Name</label>
+              <input class="form-input" type="text" placeholder="Last" id="lname">
+            </div>
+          </div>
+          <div class="form-g">
+            <label class="form-label-group">Phone</label>
+            <input class="form-input" type="tel" placeholder="(480) 000-0000" id="phone">
+          </div>
+          <div class="form-g">
+            <label class="form-label-group">Email</label>
+            <input class="form-input" type="email" placeholder="you@email.com" id="email">
+          </div>
+          <div class="form-row">
+            <div class="form-g">
+              <label class="form-label-group">Party Size</label>
+              <select class="form-select" id="partysize">
+                <option value="">Guests</option>
+                <option>1 guest</option>
+                <option>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+                <option>5 guests</option>
+                <option>6 guests</option>
+                <option>7 guests</option>
+                <option>8+ guests</option>
+              </select>
+            </div>
+            <div class="form-g">
+              <label class="form-label-group">Preferred Date</label>
+              <input class="form-input" type="date" id="prefdate">
+            </div>
+          </div>
+          <div class="form-g">
+            <label class="form-label-group">Occasion</label>
+            <select class="form-select" id="occasion">
+              <option value="">Select if applicable</option>
+              <option>Birthday Celebration</option>
+              <option>Anniversary</option>
+              <option>Date Night</option>
+              <option>Business Dinner</option>
+              <option>Happy Hour</option>
+              <option>Group Dinner</option>
+              <option>Just Dinner</option>
+            </select>
+          </div>
+          <button class="btn-form" onclick="handleInquiry()" style="margin-top:8px">Send Inquiry →</button>
+          <p class="form-lock">We'll confirm within 2 hours · Private &amp; confidential</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="booking-right">
+      <h3 class="info-title">An <em>Unhurried</em> Evening</h3>
+      <p class="info-sub">tomu san is designed for lingering — share a sake flight, work through the daily nigiri selection, and let the meal find its own pace.</p>
+
+      <div class="info-block">
+        <div class="info-block-label">Hours</div>
+        <div class="info-block-text">
+          Monday – Sunday<br>
+          12:00 PM – 9:00 PM<br>
+          <span style="font-family:'Lato',sans-serif;font-size:12px;color:var(--muted-lt);font-style:normal">Happy hour available · Bar seating walk-in welcome</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">Location</div>
+        <div class="info-block-text">
+          20825 N Pima Rd, Suite 100<br>
+          Scottsdale, AZ 85255<br>
+          <span style="font-family:'Lato',sans-serif;font-size:12px;color:var(--muted-lt);font-style:normal">DC Ranch Village · Ample parking</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">Guest Voices</div>
+        <div class="stars">★★★★½</div>
+        <div class="review-count">4.4 · 127 verified reviews on OpenTable</div>
+        <div class="review-quote">"The best omakase-style experience I've found outside of Tokyo. Chef George is quietly extraordinary and the sake program changed how I think about pairing."</div>
+        <div class="review-attr">— Verified OpenTable Guest</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">What Makes tomu san Different</div>
+        <div class="uvp-list">
+          <div class="uvp-item"><div class="uvp-mark"></div>Daily menu — sourced fresh, written each morning</div>
+          <div class="uvp-item"><div class="uvp-mark"></div>Binchotan-fired dishes alongside pristine raw preparation</div>
+          <div class="uvp-item"><div class="uvp-mark"></div>Rare Japanese whisky selection and hand-selected sake</div>
+          <div class="uvp-item"><div class="uvp-mark"></div>Thoughtfully composed zero-proof pairings</div>
+          <div class="uvp-item"><div class="uvp-mark"></div>Family-style sharing encouraged — come with people you like</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pull-section">
+  <div class="pull-inner">
+    <p class="pull-quote">"we don't just serve food — we create <em>a moment.</em> shared, savored, and remembered."</p>
+    <div class="pull-attrs">
+      <div class="pull-attr">Pristine Nigiri</div>
+      <div class="pull-attr">Binchotan Fire</div>
+      <div class="pull-attr">Rare Sake</div>
+      <div class="pull-attr">Japanese Whisky</div>
+      <div class="pull-attr">Zero-Proof Pairings</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE SECTION -->
+<section class="experience-section">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="section-eyebrow">The Experience</div>
+    <h2 class="section-title" style="text-align:left">What to <em>Expect</em></h2>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <span class="exp-num">01</span>
+        <div class="exp-name">The Kitchen</div>
+        <p class="exp-desc">Chef Christopher George's menu updates daily with the freshest possible ingredients — pristine sashimi and nigiri alongside contemporary dishes that honor traditional Japanese technique.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-num">02</span>
+        <div class="exp-name">Binchotan Fire</div>
+        <p class="exp-desc">Japanese white charcoal at 1000°C — a cooking method that caramelizes without contaminating, producing a smoke-free, intensely clean flavor impossible to replicate any other way.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-num">03</span>
+        <div class="exp-name">The Beverage Program</div>
+        <p class="exp-desc">Rare Japanese whiskies, hand-selected sake, creative cocktails, and thoughtfully composed zero-proof pairings — each chosen to balance and enhance the meal's natural progression.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-num">04</span>
+        <div class="exp-name">Shared Dining</div>
+        <p class="exp-desc">Many plates arrive family-style — designed not just to feed but to invite conversation. tomu san is built for lingering, for sharing, and for the kind of meal that gets talked about afterward.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-num">05</span>
+        <div class="exp-name">The Setting</div>
+        <p class="exp-desc">Minimalist design meets natural warmth. Soft light, open space, and a serene atmosphere that feels both cinematic and intimate — a dining room designed to disappear around the meal.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-num">06</span>
+        <div class="exp-name">DC Ranch Location</div>
+        <p class="exp-desc">20825 N Pima Rd, Suite 100 in DC Ranch Village — Scottsdale's most refined neighborhood. Easily accessible from Paradise Valley, North Scottsdale, and Carefree.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="section-eyebrow">Guest Reviews</div>
+    <h2 class="section-title" style="text-align:left">What Guests <em>Say</em></h2>
+    <div class="reviews-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Quiet, precise, extraordinary. The daily nigiri selection alone is reason enough to come back every week. The sake pairing the server suggested was revelatory — exactly what this style of dining should feel like."</p>
+        <div class="rev-meta"><strong>Michael T.</strong> · Verified OpenTable Guest</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"tomu san is the neighborhood gem Scottsdale needed. The binchotan dishes have a depth and cleanness that's hard to describe — you just taste it. The atmosphere is serene without being precious."</p>
+        <div class="rev-meta"><strong>Rachel K.</strong> · Verified OpenTable Guest</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Brought clients here twice now. Both times they've asked to come back for the next visit. The Japanese whisky program is serious, the food is exceptional, and the service feels genuinely considered."</p>
+        <div class="rev-meta"><strong>David M.</strong> · Verified OpenTable Guest</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BADGES STRIP -->
+<div class="badges-strip">
+  <div class="badge-item">Neighborhood Gem</div>
+  <div class="badge-item">Great for Outdoor Dining</div>
+  <div class="badge-item">Innovative</div>
+  <div class="badge-item">4.4 Stars · 127 Reviews</div>
+  <div class="badge-item">Booked 11 Times Today</div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2 class="final-title">Reserve<br>Your <em>Table</em></h2>
+  <p class="final-sub">A meal at tomu san is never quite the same twice.<br>That's the point.</p>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+    <a href="https://www.opentable.com/r/tomu-san-sushi-scottsdale" target="_blank" rel="noopener" class="btn-primary btn-final-reserve" onclick="fireOTClick()">Reserve Instantly on OpenTable →</a>
+    <a href="tel:4804047030" class="final-call-link" onclick="fireCallClick()">or call to book &nbsp;·&nbsp; (480) 404-7030</a>
+  </div>
+  <p class="final-note">Open daily 12:00 PM – 9:00 PM · 20825 N Pima Rd, Suite 100 · Scottsdale, AZ 85255</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">tomu san
+      <small>Modern Japanese · DC Ranch</small>
+    </div>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-label">Visit</div>
+    <p>20825 N Pima Rd, Suite 100</p>
+    <p>Scottsdale, AZ 85255</p>
+    <p>Mon – Sun: 12:00 PM – 9:00 PM</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-label">Contact</div>
+    <a href="tel:4804047030">(480) 404-7030</a>
+    <a href="mailto:tomusan@kaufmanhospitality.com">tomusan@kaufmanhospitality.com</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-label">Explore</div>
+    <a href="https://www.tomusansushi.com/menus" target="_blank">Daily Menu</a>
+    <a href="https://www.tomusansushi.com/private-events" target="_blank">Private Events</a>
+    <a href="https://www.opentable.com/r/tomu-san-sushi-scottsdale" target="_blank" onclick="fireOTClick()">Reserve a Table</a>
+  </div>
+  <div class="footer-copy">© 2026 tomu san · Scottsdale, AZ · A Kaufman Hospitality Concept</div>
+</footer>
+
+
+<!-- MOBILE STICKY BAR -->
+<div class="sticky-bar">
+  <a href="tel:4804047030" class="sticky-bar-call" onclick="fireCallClick()">📞 Call</a>
+  <a href="https://www.opentable.com/r/tomu-san-sushi-scottsdale" target="_blank" rel="noopener" class="sticky-bar-reserve" onclick="fireOTClick()">Reserve Instantly →</a>
+</div>
+
+<script>
+/* ── META PIXEL ── */
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+
+/* ── OT CLICK TRACKING ── */
+function fireCallClick(){
+  fbq('track','Contact',{content_name:'Call to Book',content_category:'Restaurant'});
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'call_click',restaurant:'tomu-san'});
+}
+function fireOTClick(){
+  fbq('track','InitiateCheckout',{content_name:'Table Reservation',content_category:'Restaurant'});
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'ot_click',restaurant:'tomu-san'});
+}
+
+/* ── NAV SCROLL ── */
+var nav=document.getElementById('mainNav');
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* ── PHONE FORMATTER ── */
+var ph=document.getElementById('phone');
+if(ph){
+  ph.addEventListener('input',function(e){
+    var v=e.target.value.replace(/\D/g,'');
+    if(v.length>10) v=v.slice(0,10);
+    if(v.length>=7) v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
+    else if(v.length>=4) v='('+v.slice(0,3)+') '+v.slice(3);
+    else if(v.length>=1) v='('+v;
+    e.target.value=v;
+  });
+}
+
+/* ── FORM INQUIRY ── */
+function handleInquiry(){
+  var fname=document.getElementById('fname');
+  var lname=document.getElementById('lname');
+  var phone=document.getElementById('phone');
+  var email=document.getElementById('email');
+  var ok=true;
+  [fname,lname,phone,email].forEach(function(f){f.style.borderColor='';});
+  if(!fname.value.trim()){fname.style.borderColor='#b85a4a';ok=false;}
+  if(!lname.value.trim()){lname.style.borderColor='#b85a4a';ok=false;}
+  if(phone.value.replace(/\D/g,'').length!==10){phone.style.borderColor='#b85a4a';ok=false;}
+  if(!email.value.trim()||email.value.indexOf('@')===-1){email.style.borderColor='#b85a4a';ok=false;}
+  if(ok){
+    fbq('track','Lead',{content_name:'Reservation Inquiry',content_category:'Restaurant'});
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'lead_submit',restaurant:'tomu-san'});
+    /* Replace with your Zapier webhook */
+    fetch('https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_HOOK/',{
+      method:'POST',
+      body:JSON.stringify({
+        source:'Tomu-san LP',
+        first_name:fname.value.trim(),
+        last_name:lname.value.trim(),
+        phone:phone.value.trim(),
+        email:email.value.trim(),
+        party_size:document.getElementById('partysize').value,
+        preferred_date:document.getElementById('prefdate').value,
+        occasion:document.getElementById('occasion').value,
+        timestamp:new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'})
+      })
+    }).catch(function(){});
+    var btn=document.querySelector('.btn-form');
+    btn.textContent='✓ Inquiry Received — We\'ll Confirm Within 2 Hours';
+    btn.style.background='var(--blue-slate)';
+    btn.disabled=true;
+    btn.style.cursor='default';
+  }
+}
+
+/* ── SCROLL REVEAL ── */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.exp-card,.rev-card,.info-block,.uvp-item').forEach(function(el){
+  el.style.opacity='0';
+  el.style.transform='translateY(16px)';
+  el.style.transition='opacity .55s ease, transform .55s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
