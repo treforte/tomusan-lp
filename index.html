@@ -59,13 +59,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .nav-logo{font-family:'EB Garamond',serif;font-size:20px;font-weight:400;color:var(--charcoal);letter-spacing:.12em;text-transform:lowercase}
 .nav-logo-sub{font-family:'Lato',sans-serif;font-size:9px;font-weight:300;letter-spacing:.4em;text-transform:uppercase;color:var(--stone);display:block;margin-top:1px}
 .nav-center{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
-.nav-phone{font-family:'Lato',sans-serif;font-size:12px;font-weight:400;color:var(--stone);letter-spacing:.06em;text-decoration:none;transition:color .2s}
-.nav-phone:hover{color:var(--charcoal)}
+.nav-phone{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;color:var(--sand);letter-spacing:.08em;text-decoration:none;border:1px solid rgba(232,224,213,.45);padding:9px 16px;transition:all .2s}
+.nav-phone:hover{background:rgba(232,224,213,.12);border-color:var(--sand)}
+.nav.scrolled .nav-phone{color:var(--charcoal);border-color:var(--border-dk)}
+.nav.scrolled .nav-phone:hover{background:var(--panel2);border-color:var(--stone)}
 .nav-reserve{font-family:'Lato',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--smoke);background:var(--charcoal);padding:12px 22px;text-decoration:none;transition:all .2s}
 .nav-reserve:hover{background:var(--blue-slate)}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:72px;overflow:hidden;background:var(--ink)}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:132px;overflow:hidden;background:var(--ink)}
 /* Full-bleed food photo simulation via gradient layers */
 .hero-img{position:absolute;inset:0;background:
   linear-gradient(to bottom, rgba(24,20,16,.15) 0%, rgba(24,20,16,.0) 30%, rgba(24,20,16,.0) 55%, rgba(24,20,16,.72) 100%),
@@ -218,7 +220,7 @@ footer{background:var(--charcoal);padding:40px 48px;display:flex;align-items:fle
   .nav{padding:16px 20px}
   .nav-center,.nav-phone{display:none}
   .nav-reserve{font-size:9px;padding:10px 16px;letter-spacing:.18em}
-  .hero{padding-bottom:96px}
+  .hero{padding-bottom:184px}
   .hero-proof{flex-wrap:wrap}
   .hero-proof-item{max-width:50%;border-bottom:1px solid rgba(232,224,213,.12)}
   .scroll-hint{display:none}
@@ -242,9 +244,9 @@ footer{background:var(--charcoal);padding:40px 48px;display:flex;align-items:fle
 /* ── HERO OPTIMIZED ── */
 .btn-hero-reserve{font-size:12px !important;padding:20px 52px !important;letter-spacing:.28em !important;box-shadow:0 4px 28px rgba(0,0,0,.35)}
 .btn-hero-reserve:hover{box-shadow:0 6px 36px rgba(0,0,0,.45)}
-.hero-call-alt{margin-top:14px;text-align:center}
-.hero-call-alt a{font-family:'Lato',sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;color:rgba(232,224,213,.6);text-decoration:none;transition:color .2s;border-bottom:1px solid rgba(232,224,213,.2);padding-bottom:1px}
-.hero-call-alt a:hover{color:rgba(232,224,213,.9);border-color:rgba(232,224,213,.5)}
+.hero-call-alt{margin-top:18px;text-align:center}
+.hero-call-alt a{display:inline-block;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--sand);background:rgba(232,224,213,.06);border:1px solid rgba(232,224,213,.5);padding:13px 26px;text-decoration:none;transition:all .2s}
+.hero-call-alt a:hover{background:rgba(232,224,213,.14);border-color:var(--sand);color:#fff}
 
 /* ── INSTANT BLOCK ── */
 .instant-block{background:var(--charcoal);padding:28px;margin-bottom:0;position:relative;overflow:hidden}
@@ -274,8 +276,8 @@ details[open] .inquiry-summary::after{transform:rotate(45deg)}
 
 /* ── FINAL CTA OPTIMIZED ── */
 .btn-final-reserve{font-size:12px !important;padding:22px 52px !important;letter-spacing:.25em !important;display:inline-block !important}
-.final-call-link{font-family:'Lato',sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;color:var(--muted);text-decoration:none;transition:color .2s;border-bottom:1px solid var(--border-dk);padding-bottom:2px}
-.final-call-link:hover{color:var(--charcoal);border-color:var(--stone)}
+.final-call-link{display:inline-block;font-family:'Lato',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--charcoal);border:1px solid var(--border-dk);padding:13px 28px;text-decoration:none;transition:all .2s}
+.final-call-link:hover{background:var(--panel2);border-color:var(--stone)}
 
 /* ── MOBILE STICKY BAR ── */
 .sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:600;flex-direction:row;box-shadow:0 -2px 20px rgba(42,36,32,.18);border-top:1px solid var(--border)}
